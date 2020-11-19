@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+}
+
+.wrapper {
+    width: 700px;
+    margin: 0 auto;
+}
+.wrapper>div {
+    margin-top: 1rem;
+}
+
+#tester {
+    background-color: #eee;
+    box-shadow: 0 0 10px #111;
+    border-radius: 0.5rem;
+}
+
+.tester_question {
+    background-color: #111;
+    color: orange;
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.tester_answer {
+    padding: 1rem;
+    cursor: pointer;
+}
