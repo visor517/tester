@@ -10,8 +10,30 @@
 <body>
     <div class="wrapper">
         <div id="tester">
-            <div class="tester_question">{{ card.question }}</div>
-            <div v-for="answer in card.answers" class="tester_answer">{{ answer }}</div>
+            <div class="tester_settings">
+                <select name="" id="">
+                    <option value="Билет 1">Билет 1</option>
+                    <option value="Билет 2">Билет 2</option>
+                </select>
+            </div>
+            <div class="tester_header">
+                <div class="tester_nav">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="tester_question">{{ card.question }}</div>
+            </div>
+            <div class="tester_answers">
+                <div v-for="answer in card.answers" class="tester_answer">{{ answer }}</div>
+            </div>
         </div>
     </div>
     <script src="js/vue-tester.js"></script>
