@@ -10,29 +10,19 @@
 <body>
     <div class="wrapper">
         <div id="tester">
-            <div class="tester_settings">
+            <div class="tester_header">
                 <select name="" id="">
                     <option value="Билет 1">Билет 1</option>
                     <option value="Билет 2">Билет 2</option>
                 </select>
+                <h2 class="tester_theme">{{ ticket[0].theme }}</h2>
             </div>
-            <div class="tester_header">
-                <div class="tester_nav">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="tester_question">{{ card.question }}</div>
+            <div class="tester_nav">
+                <div v-for="(task, index) in ticket" v-on:click="taskChanger(index)">{{ index+1 }}</div>
             </div>
+            <div class="tester_question">{{ current_task.question }}</div>
             <div class="tester_answers">
-                <div v-for="answer in card.answers" class="tester_answer">{{ answer }}</div>
+                <div v-for="answer in current_task.answers" class="tester_answer">{{ answer }}</div>
             </div>
         </div>
     </div>
