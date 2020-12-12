@@ -79,8 +79,15 @@ body {
 .tester_answers {
     padding: 0.5rem;
 }
+.tester_answers .wrong, .tester_nav .wrong {background: red}
+.tester_answers .correct, .tester_nav .correct {background: lightgreen}
+.tester_answers .hint {box-shadow: inset 0 0 0 2px green}
+.tester_nav .active {background-color: var(--color-accent)}
 
 .tester_answer {
     padding: 0.5rem;
     cursor: pointer;
+    margin-bottom: 3px;
+    background-color: #ddd;
 }
+.tester_answer:last-child {margin-bottom: 0;}

@@ -18,12 +18,19 @@
                 <h2 class="tester_theme">{{ ticket[0].theme }}</h2>
             </div>
             <div class="tester_nav">
-                <div v-for="(task, index) in ticket" v-on:click="taskChanger(index)">{{ index+1 }}</div>
+                <div v-for="(task, index) in ticket" v-bind:class="[current_task_index == index ? 'active' : '', task.state]" v-on:click="taskChanger(index)">{{ index+1 }}</div>
             </div>
-            <div class="tester_question">{{ current_task.question }}</div>
+
+            <div class="tester_question">{{ ticket[current_task_index].question }}</div>
             <div class="tester_answers">
-                <div v-for="answer in current_task.answers" class="tester_answer">{{ answer }}</div>
+                <div v-for="(answer, index) in ticket[current_task_index].answers" 
+                    class="tester_answer"
+                    v-bind:class="answer.state"
+                    v-on:click="chooser(answer)">
+                    {{ answer.value }}
+                </div>
             </div>
+
         </div>
     </div>
     <script src="js/vue-tester.js"></script>
